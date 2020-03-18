@@ -1,5 +1,5 @@
 from application import db
-from application.models import Gym, Classes, Users
+from application.models import Gym, Classes
 
 
 db.drop_all()
