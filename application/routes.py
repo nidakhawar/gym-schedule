@@ -14,12 +14,23 @@ def home():
     ClassesData = Classes.query.all()
     return render_template('home.html', title='Home', classes=ClassesData)
 
-@app.route('/delete', methods=['GET', 'POST'])
+@app.route('/delete', methods=['POST'])
 def delete():
-    gyms=Gym.query.filter_by(gymid=gym_id).first()
-    db.session.delete(gyms)
+    gym_id=request.form.get("gym_id")
+    gym_name=Gym.query.filter_by(gym_id=gym_id).first()
+    db.session.delete(gym_name)
     db.session.commit()
     return redirect(url_for('gym'))
+
+
+@app.route("/update", methods=["POST"])
+def update():
+    newgymname = request.form.get("newgymname")
+    gymname = request.form.get("gymname")
+    gym_name = Gym.query.filter_by(title=gymname).first()
+    gym_name.gym_id= newgymname
+    db.session.commit()
+    return redirect("/")
 
 
 @app.route('/gym', methods=['GET', 'POST'])

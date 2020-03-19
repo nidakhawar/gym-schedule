@@ -1,11 +1,26 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    <p>Welcome to my gym scheduling web app!</p>
+<head>
+    <p><b><center>Welcome to my gym scheduling web app!</center></b>
+    </p>
+    <body>
+        <img src="images/exercise.webp" alt="Classes to stay fit and healthy">
+    </body>
+</head>
         {% for gym in gym %}
         <div>
             <h3>{{ gym.gym_name}}</h3>
             <span><h3>{{ gym.postcode }} </span></h3></span>
         </div>
+        {% endfor %}
+
+        {% for gym in gym %}
+        <p>{{gym.gym_name}}</p>
+        <form method="POST" action="./update">
+            <input type="hidden" value="{{gym.gym_name}}" name="gymname">
+            <input type="text" value="{{gym.gym_name}}" name="newgymname">
+            <input type="submit" value="Update">
+        </form>
         {% endfor %}
 
         {% for classes in classes %}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    <h1>Gym Info</h1>
+    <h2>Please enter your Gym Information</h2>
     <div class='form'>
         <form method='POST' action=''>
             {{ form.hidden_tag() }}         
@@ -13,4 +13,23 @@
             {{ form.submit }}
     </form>
     </div>
+
+    <h2>Please enter the Activity you want to book</h2>
+    <div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}         
+            {{ form.activity.label }}
+            {{form.activity}}
+            <br>
+            {{ form.date.label }}
+            {{form.date}}
+        </br>
+        <br>
+        {{ form.time.label }}
+        {{form.time}}
+    </br>
+            {{ form.submit }}
+    </form>
+    </div>
+
 {% endblock %}
