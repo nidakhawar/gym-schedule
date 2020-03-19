@@ -75,6 +75,6 @@ Nida Khawar
 <a name="ack"></a>
 ## Acknowledgements
 
-* QA consulting and our amazng trainers
-* The rest of my wonderful team on the programme
+* Luke, Ben, Matt
+* My wonderful team members on the programme
 
