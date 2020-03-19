@@ -37,7 +37,7 @@ There is a many to many relationship between gym and classes, therefore I added 
 ## Architecture
 <a name="erd"></a>
 ### Entity Relationship Diagram
-![ERD](/Documentation/ERD_Initial_Plan.jpg)
+![ERD](/Project1-Documentation/gym-erd.jpeg)
 
 <a name="testing"></a>
 ## Testing
