@@ -24,7 +24,7 @@ My first week 6 solo project of my academey journey at QA due on Mon, 23rd March
 <a name="objective"></a>
 ## Objective
 
-To create CRUD application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training.
+To create CRUD application using the feature branch model and with the utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training.
 
 
 <a name="solution"></a>
@@ -49,7 +49,7 @@ Unit Testing has been used
 The build, test and deployment process was automated using Jenkins, with a webhook to GitHub which was triggered with every push event.
 
 This application can be deployed both locally and externally through a virtual machine.
-![Deployment Pipeline](/Project1-Documentation/CI_pipeline.odp)
+![Deployment Pipeline](/Project1-Documentation/CI Pipeline.ppxt)
 <a name="tech"></a>
 ### Technologies Used
 
@@ -77,4 +77,3 @@ Nida Khawar
 
 * Luke, Ben, Matt
 * My wonderful team members on the programme
-
