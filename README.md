@@ -51,12 +51,12 @@ Unit Testing has been used
 The build, test and deployment process was automated using Jenkins, with a webhook to GitHub which was triggered with every push event.
 
 This application can be deployed both locally and externally through a virtual machine.
-![Deployment Pipeline](/Project1-Documentation/CIPipeline.ppxt)
+![Deployment Pipeline](/Project1-Documentation/Screenshot-ci.png)
 
 <a name="risk"></a>
 ## Risk Assessment
 
-![Risk Assessment](/Project1-Documentation/RiskAssessment.docx)
+![Risk Assessment](/Project1-Documentation/Screenshot-risk.png)
 
 <a name="tech"></a>
 ### Technologies Used
