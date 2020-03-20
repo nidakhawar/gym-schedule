@@ -13,6 +13,8 @@ My first week 6 solo project of my academey journey at QA due on Mon, 23rd March
 
 [Deployment](#depl)
    * [Technologies Used](#tech)
+   
+[Risk Assessment](#risk)
 
 [Improvements for the Future](#improve)
 
@@ -49,7 +51,13 @@ Unit Testing has been used
 The build, test and deployment process was automated using Jenkins, with a webhook to GitHub which was triggered with every push event.
 
 This application can be deployed both locally and externally through a virtual machine.
-![Deployment Pipeline](/Project1-Documentation/CI Pipeline.ppxt)
+![Deployment Pipeline](/Project1-Documentation/CIPipeline.ppxt)
+
+<a name="risk"></a>
+## Risk Assessment
+
+![Risk Assessment](/Project1-Documentation/RiskAssessment.docx)
+
 <a name="tech"></a>
 ### Technologies Used
 
