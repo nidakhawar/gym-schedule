@@ -56,7 +56,7 @@ This application can be deployed both locally and externally through a virtual m
 <a name="risk"></a>
 ## Risk Assessment
 
-![Risk Assessment](/Project1-Documentation/Screenshot-risk.png)
+![Risk Assessment](/Project1-Documentation/Srisk-assessment.png)
 
 <a name="tech"></a>
 ### Technologies Used
