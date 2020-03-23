@@ -2,7 +2,7 @@
 from flask import render_template, redirect, url_for, request
 from application import app, db, bcrypt
 from application.models import Gym, Classes
-from application.forms import GymForm, ClassesForm, UpdateGymForm
+from application.forms import GymForm, ClassesForm, UpdateGymForm, DeleteGymForm
 
 # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
@@ -13,25 +13,42 @@ def home():
     classesData = Classes.query.all()
     return render_template('home.html', title='Home', gym=gymData, classes=classesData)
 
-@app.route('/delete/<int:gym_id>', methods=['POST'])
-def delete(gym_id):
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
 
-    gym_id = Gym.query.filter_by(gym_id=gym_id).first()
-    db.session.delete(gym_id)
-    db.session.commit()
-    return redirect(url_for('gym'))
+    form = DeleteGymForm()
+    print ('===============================Delete Form================================')
+    print (form.gym_id.data)
+    print (form.validate_on_submit())
+    if form.validate_on_submit():
+        gymid = form.gym_id.data
+        print ('===============================',gymid,'================================')
+        gymData=Gym.query.filter_by(gym_id=gymid).first()
+        
+        db.session.delete(gymData)
+        
+        b.session.commit()
+        
+        return redirect(url_for('/'))
+
+    return render_template('home.html', title='Home', form=form)
 
 
-@app.route('/update/<int:gym_id>', methods=["POST"])
+@app.route('/update', methods=['GET', 'POST'])
 def update():
     form = UpdateGymForm()
-    newgymname = request.form.get("newgymname")
-    gym_name = request.form.get("gym_name")
-    gym_name = Gym.query.filter_by(gym_name=gym_name).first()
-    gymname.gym_id = newgymname
-    db.session.commit()
-    return redirect("/")
-
+    gymData = Gym.query.all()
+    if form.validate_on_submit():
+        gymid=form.gym_id.data
+        gymData=Gym.query.filter_by(gym_id=gymid).first()
+        gymData.gym_name=form.gym_name.data,
+        gymData.postcode=form.postcode.data
+        
+        db.session.commit()
+        
+        return redirect("/")
+        
+    return render_template('home.html', title='Home', form=form)
 
 @app.route('/gym', methods=['GET', 'POST'])
 def gym():
@@ -58,10 +75,13 @@ def gym():
 def classes():
     form = ClassesForm()
     if form.validate_on_submit():
+        gymdetails = Gym.query.all()
+        gym_id = Gym.query.filter_by(gym_id = gymdetails.gym_id).first()
         classesData = Classes(
             activity = form.activity.data,
             date = form.date.data,
-            time = form.time.data
+            time = form.time.data,
+            gymplan = gym_id
             
         )
 

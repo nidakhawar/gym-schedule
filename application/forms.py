@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, BooleanField
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from application.models import Classes, Gym
 
@@ -38,25 +38,27 @@ class ClassesForm(FlaskForm):
     submit = SubmitField('Add')
 
 class UpdateGymForm(FlaskForm):
-    first_name = StringField('First Name',
+    gym_id = IntegerField('Gym id',
         validators=[
-            DataRequired(),
-            Length(min=4, max=30)
+            DataRequired()
         ])
-    last_name = StringField('Last Name',
+    gym_name = StringField('Gym Name',
         validators=[
             DataRequired(),
-            Length(min=4, max=30)
+            Length(min=2, max=30)
         ])
-    email = StringField('Email',
+    postcode = StringField('Postcode',
         validators=[
-            DataRequired(),
-            Email()
+            DataRequired()
         ])
     submit = SubmitField('Update')
 
-    def validate_email(self,email):
-        if email.data != current_user.email:
-            user = Users.query.filter_by(email=email.data).first()
-            if user:
-                raise ValidationError('Email already in use')
+
+class DeleteGymForm(FlaskForm):
+    gym_id = IntegerField('Gym id',
+        validators = [
+            DataRequired()
+        ]
+    )
+
+    submit = SubmitField('Delete')
