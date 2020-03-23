@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, BooleanField
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from application.models import Classes, Gym
 
@@ -36,3 +36,29 @@ class ClassesForm(FlaskForm):
         ]
     )
     submit = SubmitField('Add')
+
+class UpdateGymForm(FlaskForm):
+    gym_id = IntegerField('Gym id',
+        validators=[
+            DataRequired()
+        ])
+    gym_name = StringField('Gym Name',
+        validators=[
+            DataRequired(),
+            Length(min=2, max=30)
+        ])
+    postcode = StringField('Postcode',
+        validators=[
+            DataRequired()
+        ])
+    submit = SubmitField('Update')
+
+
+class DeleteGymForm(FlaskForm):
+    gym_id = IntegerField('Gym id',
+        validators = [
+            DataRequired()
+        ]
+    )
+
+    submit = SubmitField('Delete')
