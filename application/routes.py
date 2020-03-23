@@ -17,21 +17,19 @@ def home():
 def delete():
 
     form = DeleteGymForm()
-    print ('===============================Delete Form================================')
     print (form.gym_id.data)
     print (form.validate_on_submit())
     if form.validate_on_submit():
         gymid = form.gym_id.data
-        print ('===============================',gymid,'================================')
         gymData=Gym.query.filter_by(gym_id=gymid).first()
         
         db.session.delete(gymData)
         
-        b.session.commit()
+        db.session.commit()
         
-        return redirect(url_for('/'))
+        return redirect(url_for('gym'))
 
-    return render_template('home.html', title='Home', form=form)
+    return render_template('delete.html', title='Delete', form=form)
 
 
 @app.route('/update', methods=['GET', 'POST'])
@@ -46,9 +44,9 @@ def update():
         
         db.session.commit()
         
-        return redirect("/")
+        return redirect_for("/")
         
-    return render_template('home.html', title='Home', form=form)
+    return render_template('update.html', title='Update', form=form)
 
 @app.route('/gym', methods=['GET', 'POST'])
 def gym():
@@ -76,7 +74,7 @@ def classes():
     form = ClassesForm()
     if form.validate_on_submit():
         gymdetails = Gym.query.all()
-        gym_id = Gym.query.filter_by(gym_id = gymdetails.gym_id).first()
+        gymdetails = Gym.query.filter_by(gym_id = gymdetails.gym_id).first()
         classesData = Classes(
             activity = form.activity.data,
             date = form.date.data,
