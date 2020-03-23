@@ -20,7 +20,7 @@ My first week 6 solo project of my academey journey at QA due on Mon, 23rd March
 
 [Authors](#auth)
 
-[Acknowledgements](#ack)
+[Special Thanks to](#thanks)
 
 
 <a name="objective"></a>
@@ -73,15 +73,15 @@ This application can be deployed both locally and externally through a virtual m
 <a name="improve"></a>
 ## Improvements for the Future
 
-In future I would like to clear my concepts furhter and add further functionalities to my app. 
+In future I would like to clear my concepts further and add further functionalities to my app, , where users are able to perform these functionalities.
 
 <a name="auth"></a>
 ## Author
 
 Nida Khawar
 
-<a name="ack"></a>
-## Acknowledgements
+<a name="thanks"></a>
+## Special Thanks to
 
 * Luke, Ben, Matt
 * My wonderful team members on the programme
